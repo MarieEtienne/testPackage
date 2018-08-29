@@ -8,7 +8,3 @@ test_that("The result on the iris dataset is as expected", {
                          as.numeric(coef(lm(Sepal.Length~Sepal.Width+Petal.Length, data=iris))))
 })
 
-test_that("The result on the iris dataset is as expected", {
-  testthat::expect_equal(as.numeric(estimates_lm(y=iris$Sepal.Length, x=cbind(iris$Sepal.Width, iris$Petal.Length))),
-                         as.numeric(coef(lm(Sepal.Length~Sepal.Width data=iris))))
-})
