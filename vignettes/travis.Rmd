@@ -1,0 +1,36 @@
+---
+title: "Package avec Travis, usethis et testthtat"
+author: "Marie-Pierre Etienne"
+date: "August 29, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Travis
+
+Travis peut être utiliser pour lancer systématiquement des tests lorsque l'on met à jour un repo git.
+Il faut se créer un compte sur travais en lien avec son compte github.
+
+Ensuite, on trouve de bonnes explications très simples sur (https://juliasilge.com/blog/beginners-guide-to-travis/)
+
+
+Il faut créer un fichier .travis.yml qui va indiquer à travis comment lancer les tests. Pour le faire on peut utiliser la commande
+```{r}
+devtools::use_travis()
+```
+
+cette commande crée le fichier 
+```{r, eval=FALSE}
+  # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
+language: R
+sudo: false
+cache: packages
+```
+
+
+Il faut ajouter le fichier dans le fichier `.Rbuildignore` pour qu'il soit ignoré lors de la construction du paquet.
+
